@@ -1,0 +1,146 @@
+import java.util.*;
+public class Five
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Do you wish to order food=> \n if yes then enter 1 \n if no then enter -1");
+	    int y=sc.nextInt();
+	    System.out.println();
+		if(y==1){
+		    System.out.println("Do your order");
+		    System.out.println("_____________");
+		    System.out.println("Menu \t"+"Display");
+	        System.out.println("1 \t"+"Snack");
+	        System.out.println("2 \t"+"Lunch");
+	        System.out.println("3 \t"+"Dinner");
+	        System.out.println("4 \t"+"Soft drink/Tea coffee");
+	        System.out.println();
+	        System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	        System.out.println();
+	        System.out.println("To order Snack, Enter 1");
+		    System.out.println("To order Lunch, Enter 2");
+		    System.out.println("To order Dinner, Enter 3");
+		    System.out.println("To order Soft Drink/Tea coffee, Enter 4");
+		    System.out.println();
+		    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+		    System.out.println();
+	        System.out.println("Click on the number for order");
+	        System.out.println(".............................");
+	        int choice=sc.nextInt();
+	        System.out.println();
+		    menu(choice);
+		}
+		else{
+		    System.out.println("Thank You for Visiting.");
+		}
+	}
+	public static void menu(int choice){
+	    
+	    
+	    switch(choice){
+	        case 1:
+	            snackmenu();
+	            break;
+	        case 2:
+	            lunchmenu();
+	            break;
+	        case 3:
+	            dinnermenu();
+	            break;
+	        case 4:
+	            drinkmenu();
+	            break;
+	            
+	    }
+	    
+	    
+	}
+	public static void snackmenu(){
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    System.out.println("Here you get Best Foods To Eat For Snacks");
+	    System.out.println("Snacks Id"+"\t\tItems"+"\t\tQty"+"\t\tPrice");
+	    System.out.println("1"+"\t\tIdli"+"\t\t1"+"\t\t40");
+	    System.out.println("2"+"\t\tDosa"+"\t\t1"+"\t\t50");
+	    System.out.println("3"+"\t\tUttapam"+"\t\t1"+"\t30");
+	    System.out.println("4"+"\t\tPoha/Upma"+"\t\t1"+"\t20");
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    int[] price={40,50,30,20};
+	    bill(price);
+	}
+	public static void lunchmenu(){
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    System.out.println("Here you get Best Foods To Eat For Lunch");
+	    System.out.println("Food id"+"\tItems"+"\tQty"+"\tPrice");
+	    System.out.println("1"+"\tSambar Rice"+"\t1"+"\t140");
+	    System.out.println("2"+"\tRajma Rice"+"\t1"+"\t110");
+	    System.out.println("3"+"\tBhindi-Fry"+"\t1"+"\t130");
+	    System.out.println("4"+"\tDal-Chapathi"+"\t1"+"\t120");
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    int[] price={140,110,130,120};
+	    bill(price);
+	    
+	}
+	public static void dinnermenu(){
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    System.out.println("Here you get Best Foods To Eat For Dinner");
+	    System.out.println("Food Id"+"\tItems"+"\t\t\t\t\t\tQty"+"\t\tPrice");
+	    System.out.println("1"+"\tBeef and Mushrooms with Smashed Potatoes"+"\t1"+"\t240");
+	    System.out.println("2"+"\tPotluck Macaroni and Cheese"+"\t\t\t1"+"\t150");
+	    System.out.println("3"+"\tSpaghetti Pie Casserole"+"\t\t\t\t1"+"\t230");
+	    System.out.println("4"+"\tSlow Cooker Beef Vegetable Stew"+"\t\t\t1"+"\t320");
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    int[] price={240,150,230,320};
+	    bill(price);
+	    
+	}
+	public static void drinkmenu(){
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    System.out.println("Here you get Best Drinks");
+	    System.out.println("Food Id"+"\tItems"+"\tQty"+"\tPrice");
+	    System.out.println("1"+"\tAFFOGATO"+"\t1"+"\t100");
+	    System.out.println("2"+"\tAMERICANO"+"\t1"+"\t70");
+	    System.out.println("3"+"\tCAFFÈ LATTE"+"\t1"+"\t90");
+	    System.out.println("4"+"\tCAFFÈ MOCHA"+"\t1"+"\t120");
+	    System.out.println("\t.........................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.............................");
+	    int[] price={100,70,90,120};
+	    bill(price);
+	}
+	public static void bill(int[] price){
+	    Scanner p=new Scanner(System.in);
+	    List<Integer> id=new ArrayList<Integer>();
+	    List<Integer> qty=new ArrayList<Integer>();
+	    //List<Integer> price=new ArrayList<Integer>();
+	    int bill=0;
+	    boolean y=true;
+	        while(y==true){
+	                System.out.print("enter the Snacks id you want to order=> ");
+	                int idd=p.nextInt();
+	                id.add(idd);
+	                System.out.println();
+	                System.out.print("enter the Quantity=> ");
+	                int qtyy=p.nextInt();
+	                qty.add(qtyy);
+	                System.out.println();
+	                System.out.println("to order others items press 1 else 0");
+	                int a=p.nextInt();
+	                if(a==1){
+	                    y=true;
+	                }
+	                else{y=false;}
+	            }
+	             System.out.println("Ordered Food id ="+id);
+	         System.out.println("Ordered Food qty"+qty);
+	         int i=0;
+	            while(i<id.size()){
+	                bill=bill+qty.get(i)*price[id.get(i)-1];
+	                i++;
+	            }
+	        
+	        
+	        
+	        System.out.println("........................|||||||||||||||||||||||||||||||||||...................................");
+	       
+	         System.out.println("Your total bill ="+bill);
+	         
+	    }
+}
