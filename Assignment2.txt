@@ -1,0 +1,118 @@
+Solution1:
+Description:
+There are two integer variables(or whatever type) and you should swap them in manually without using any build in function and 
+any other variable.
+=>
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a=sc.nextInt();
+	    int b=sc.nextInt();
+	    int c;
+	    a=a+b;
+	    b=a-b;
+	    a=a-b;
+		System.out.println("Number after swapping: "+" a = "+a+"   b= "+b);
+	}
+}
+
+
+
+
+Solution2:
+Description:
+There is a String "Hello Welcome to Java World!!" and you need to reverse it. You have to show two ways of how to reverse the String by using build-in functions and doing manually.
+Solutions=>
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		char[] try1 = str.toCharArray();
+		for(int i=try1.length-1;i>=0;i--){
+		    System.out.print(try1[i]);
+		}}
+}
+
+
+
+
+Solution3:
+Description:
+Write a method in Java which takes String parameter and Character, then the method should remove the character from given String.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String str=sc.nextLine();
+	    char ch=sc.next().charAt(0);
+	    remove(str,ch);
+	}
+	public static void remove(String str,char ch){
+	    int c=0,x=0;
+	    for(int i=0;i<str.length();i++)
+	    {
+	        if(str.charAt(i)==ch){
+	            c=i;
+	            x++;
+	            break;
+	        }
+	        
+	    }
+	    String tt=String.valueOf(ch);
+	    str=str.replace(tt,"");
+	    System.out.println(str);
+	}
+}
+
+
+Solution4:
+Description:
+Write a Java program which takes input of Integer number and outputs the ODD or EVEN of the entered number.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    if(num%2==0){
+	        System.out.println("the given number is even");
+	    }
+	    else{
+	        System.out.println("the given number is odd");
+	    }
+	
+	}
+}
+
+
+
+Solution5:
+Description:
+Write a Java program that reads an integer between 0 and 1000 and adds all the digits of that integer
+Solutions=>
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    int temp=num,sum=0,rem=0;
+	    if(num>0 && num<1000){
+	        while(temp>0){
+	            rem=temp%10;
+	            sum=sum+rem;
+	            temp=temp/10;
+	        }
+	    }
+	    else{
+	        System.out.println("number is not found");
+	    }
+	    
+	System.out.println("the sum of number= "+sum);
+	}
+}
